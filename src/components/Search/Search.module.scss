@@ -1,0 +1,44 @@
+// .searchLine {
+//   width: 340px;
+//   height: 36px;
+//   background: var(--secondary-black);
+//   margin-top: 44px;
+//   margin-left: auto;
+//   padding: 8px 16px;
+//   border-radius: 4px;
+//     input {
+//       background: var(--secondary-black);
+//       border: none;
+//       font-size: 14px;
+//     }
+// }
+
+.searchLine {
+  width: 340px;
+  height: 36px;
+  background: var(--secondary-black);
+  margin-top: 44px;
+  margin-left: auto;
+  padding: 8px 16px;
+  border-radius: 4px;
+  position: relative; /* Чтобы позиционировать иконку внутри контейнера */
+    &::before {
+      content: "";
+      background-image: url("../../assets/icons/search1_icon.svg");
+      position: absolute; /* Позиционирование относительно .searchForm */
+      width: 20px; 
+      height: 20px;
+    } 
+    input {
+      width: 100%; /* Заполняет родительский элемент */
+      height: 100%;
+      background: transparent; /* Делаем фон прозрачным */
+      border: none;
+      font-size: 14px;
+      margin-left: 32px;
+    }
+}
+
+
+
+

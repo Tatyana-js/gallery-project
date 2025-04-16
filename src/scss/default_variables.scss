@@ -1,0 +1,35 @@
+// @use "sass:map";
+// @use "sass:string";
+
+// $theme-colors: (
+//   "primary":    ("primary_white": "#FFFFFF", "primary_black": "#121212"),
+//   "secondary":  ("secondary_white": "#FCFCFC", "secondary_black": "#1A1818"),
+// );
+
+// @mixin colors($theme-colors, $tone: black) {
+//   @each $color-name, $color-tone in $theme-colors {
+    
+//     $color-value: map.get($color-tone, $tone);
+//     .bg-#{$color-name} {
+//       background: string.unquote($color-value);
+//     }
+//     .text-#{$color-name} {
+//       color: string.unquote($color-value); 
+//     }
+//   }
+// }
+
+// @include colors($theme-colors);
+
+:root {
+  --primary-white: #FFFFFF;
+  --primary-black: #121212;
+  --primary-light-gray: #DEDEDE;
+  --primary-dark-gray: #575757;
+
+  --secondary-white: #FCFCFC;
+  --secondary-black: #1A1818;
+  --secondary-gray: #9C9C9C;
+  --accent-red: #9B4B4B;
+  --accent-gold: #AB8956;
+}
