@@ -1,4 +1,15 @@
 .galleryList {
-  width: 100%;
-  height: 100%;
+  height: 552px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 32px;
+}
+
+.painting {
+  img {
+    width: 392px;
+    height: 260px;
+  }
 }
