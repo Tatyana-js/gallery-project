@@ -1,22 +1,29 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useState, useMemo } from 'react';
 
-interface IThemeContext {
+export interface IThemeContext {
   theme: string;
   togleTheme: () => void;
 }
 interface IThemeProvaiderProps {
   children: ReactNode;
 }
-const ThemeContext = createContext<IThemeContext>({theme: 'dark', togleTheme: () => {}});
+
+export const ThemeContext = createContext<IThemeContext>({ theme: 'dark', togleTheme: () => {} });
 
 const ThemeContextProvider = ({ children }: IThemeProvaiderProps) => {
-  const [ state, setState ] = useState('dark');
+  const [ theme, setTheme ] = useState('dark');
+
   const togleTheme = () => {
-    if (state === 'dark') {
-      setState('light');
-    }
-    else {
-      setState('dark');
-    }
+    setTheme(prevState => (prevState === 'dark' ? 'light' : 'dark'));
   };
-}; 
+
+  const value = useMemo(() => ({ theme, togleTheme }), [theme, togleTheme]);
+
+  return (
+    <ThemeContext.Provider value={value}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export default ThemeContextProvider;
