@@ -6,41 +6,34 @@
   margin-left: auto;
   padding: 8px 16px;
   border-radius: 4px;
-    img {
-      padding-right: 12px;
-    }
+  position: relative;
+    &::before {
+      content: "";
+      background-image: url("../../assets/icons/search1_icon.svg");
+      position: absolute;
+      width: 20px; 
+      height: 20px;
+    } 
     input {
-      background: var(--secondary-black);
+      width: 100%;
+      height: 100%;
+      background: transparent; /* Делаем фон прозрачным */
       border: none;
       font-size: 14px;
+      padding-left: 48px;
+      font-family: "Inter";
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+        &:focus-visible {
+          outline: none;
+          border: 1px solid var(--primary-light-gray);
+        }
+        &::placeholder {
+          color: var();
+        }
     }
 }
-
-// .searchLine {
-//   width: 340px;
-//   height: 36px;
-//   background: var(--secondary-black);
-//   margin-top: 44px;
-//   margin-left: auto;
-//   padding: 8px 16px;
-//   border-radius: 4px;
-//   position: relative; /* Чтобы позиционировать иконку внутри контейнера */
-//     &::before {
-//       content: "";
-//       background-image: url("../../assets/icons/search1_icon.svg");
-//       position: absolute; /* Позиционирование относительно .searchForm */
-//       width: 20px; 
-//       height: 20px;
-//     } 
-//     input {
-//       width: 100%; /* Заполняет родительский элемент */
-//       height: 100%;
-//       background: transparent; /* Делаем фон прозрачным */
-//       border: none;
-//       font-size: 14px;
-//       margin-left: 32px;
-//     }
-// }
 
 
 

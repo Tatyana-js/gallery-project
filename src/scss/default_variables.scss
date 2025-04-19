@@ -32,4 +32,14 @@
   --secondary-gray: #9C9C9C;
   --accent-red: #9B4B4B;
   --accent-gold: #AB8956;
+  --hover-gray: #F3F3F3;
+  --hover-dark: #1B1B1B;
+
+  --text-color: var(--primary-white);
+  --background-color: var(--primary-black);
+  --accent-color: var(--accent-gold);
+  --button-background: var(--secondary-black);
+  --button-background-hover: var(--hover-dark);
+  --placeholder-color: var(--primary-dark-gray);
+  --input-color: var(--primary-light-gray);
 }
