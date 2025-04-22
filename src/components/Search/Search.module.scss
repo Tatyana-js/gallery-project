@@ -7,13 +7,32 @@
   padding: 8px 16px;
   border-radius: 4px;
   position: relative;
+
     &::before {
       content: "";
-      background-image: url("../../assets/icons/search1_icon.svg");
-      position: absolute;
+      position: absolute; 
+      background: 
+        url("../../assets/icons/search1_icon.svg")
+        center/20px
+        no-repeat;
       width: 20px; 
       height: 20px;
-    } 
+    }
+
+    .clear_icon {
+      position: absolute;
+      background:
+        url("../../assets/icons/Vector.svg")
+        center/8px
+        no-repeat;
+      width: 12px; 
+      height: 12px;
+      right: 16px;
+      top: 12px;
+      bottom: 12px;
+      opacity: 0;
+    }
+
     input {
       width: 100%;
       height: 100%;
@@ -21,20 +40,39 @@
       border: none;
       font-size: 14px;
       padding-left: 48px;
+      padding-right: 48px;
       font-family: "Inter";
       position: absolute;
       inset: 0;
       border-radius: 4px;
-        &:focus-visible {
+      color: var(--primary-light-gray);
+
+        &::placeholder {
+          color: var(--primary-dark-gray);
+          font-weight: 300;
+        }
+
+        &:focus-visible  {
           outline: none;
           border: 1px solid var(--primary-light-gray);
         }
-        &::placeholder {
-          color: var();
-        }
     }
-}
 
-
-
-
+    input:not(:placeholder-shown) + .clear_icon {
+      opacity: 1; /* Показываем иконку, если поле заполнено */
+    }
+  }
+    // &::after {
+    //   content: "";
+    //   background:
+    //     url("../../assets/icons/Vector.svg")
+    //     center/8px
+    //     no-repeat;
+    //   position: absolute;
+    //   width: 12px; 
+    //   height: 12px;
+    //   right: 16px;
+    //   top: 12px;
+    //   bottom: 12px;
+    //   opacity: 1;
+    // }

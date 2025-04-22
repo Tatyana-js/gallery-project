@@ -1,5 +1,5 @@
 import logo from '../../assets/logo.svg';
-import sun_icon from '../../assets/icons/sun_icon.svg';
+import icon_sun from '../../assets/icons/sun_icon.svg';
 import styles from './Header.module.scss';
 import { useContext } from 'react';
 import  { ThemeContext } from '../../context/ThemeContext';
@@ -12,7 +12,7 @@ const Header = () => {
     <div className={styles.header}>
       <img src={logo} className={styles.icon_logo} alt="Логотип" />
       <button className={styles.button_theme} onClick={togleTheme}>
-        <img src={sun_icon} className={styles.sun_icon} alt="Знак солнца" />
+        <img src={icon_sun} className={styles.icon_sun} alt="Знак солнца" />
       </button>
     </div>
   );

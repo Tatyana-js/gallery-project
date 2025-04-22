@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--primary-black);
 }
 
 .icon_logo {
@@ -10,14 +11,15 @@
   height: 20px;
 }
 
-.icon_sun {
-  width: 20px;
-  height: 20px;
-}
-
 .button_theme {
   width: 40px;
   height: 40px;
-  background: var(--primary-black);
+  background: var(--secondary-black);
   border: none;
+  border-radius: 50%;
+
+  .icon_sun {
+    width: 20px;
+    height: 20px;
+  }
 }

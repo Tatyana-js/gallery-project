@@ -3,7 +3,7 @@ import { useGetPaintingsQuery, useGetAuthorsQuery, useGetLocationsQuery } from '
 import { useEffect } from 'react';
 
 const GalleryList = () => {
-  const { data: paintings = [], error: paintingsError } =  useGetPaintingsQuery();
+  const { data: paintings = [], error:  paintingsError} =  useGetPaintingsQuery();
   const { data: authors = [] } = useGetAuthorsQuery();
   const  { data: locations = [] } = useGetLocationsQuery();
 
