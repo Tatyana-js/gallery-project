@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useMemo } from 'react';
+import { createContext, ReactNode, useState, useMemo } from "react";
 
 export interface IThemeContext {
   theme: string;
@@ -8,21 +8,22 @@ interface IThemeProvaiderProps {
   children: ReactNode;
 }
 
-export const ThemeContext = createContext<IThemeContext>({ theme: 'dark', togleTheme: () => {} });
+export const ThemeContext = createContext<IThemeContext>({
+  theme: "dark",
+  togleTheme: () => {},
+});
 
 const ThemeContextProvider = ({ children }: IThemeProvaiderProps) => {
-  const [ theme, setTheme ] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   const togleTheme = () => {
-    setTheme(prevState => (prevState === 'dark' ? 'light' : 'dark'));
+    setTheme((prevState) => (prevState === "dark" ? "light" : "dark"));
   };
 
   const value = useMemo(() => ({ theme, togleTheme }), [theme, togleTheme]);
 
   return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
 

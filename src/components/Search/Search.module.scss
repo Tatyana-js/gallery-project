@@ -1,78 +1,71 @@
+$dark-mode: true;
+
+@mixin icon($name, $size, $bs) {
+  position: absolute;
+  width: $size;
+  height: $size; 
+  background: url("../../assets/icons/icon_#{$name}.svg") center/$bs no-repeat;
+}
+
 .searchLine {
   width: 340px;
   height: 36px;
-  background: var(--secondary-black);
+  background: var(--background-color);
   margin-top: 44px;
   margin-left: auto;
   padding: 8px 16px;
-  border-radius: 4px;
   position: relative;
 
-    &::before {
-      content: "";
-      position: absolute; 
-      background: 
-        url("../../assets/icons/search1_icon.svg")
-        center/20px
-        no-repeat;
-      width: 20px; 
-      height: 20px;
-    }
+  &::before {
+    content: ""; 
+    @include icon('search_light', 20px, 20px);
 
-    .clear_icon {
-      position: absolute;
-      background:
-        url("../../assets/icons/Vector.svg")
-        center/8px
-        no-repeat;
-      width: 12px; 
-      height: 12px;
-      right: 16px;
-      top: 12px;
-      bottom: 12px;
-      opacity: 0;
-    }
-
-    input {
-      width: 100%;
-      height: 100%;
-      background: transparent; /* Делаем фон прозрачным */
-      border: none;
-      font-size: 14px;
-      padding-left: 48px;
-      padding-right: 48px;
-      font-family: "Inter";
-      position: absolute;
-      inset: 0;
-      border-radius: 4px;
-      color: var(--primary-light-gray);
-
-        &::placeholder {
-          color: var(--primary-dark-gray);
-          font-weight: 300;
-        }
-
-        &:focus-visible  {
-          outline: none;
-          border: 1px solid var(--primary-light-gray);
-        }
-    }
-
-    input:not(:placeholder-shown) + .clear_icon {
-      opacity: 1; /* Показываем иконку, если поле заполнено */
+    @if $dark-mode == true {
+      @include icon('search', 20px, 20px);
     }
   }
-    // &::after {
-    //   content: "";
-    //   background:
-    //     url("../../assets/icons/Vector.svg")
-    //     center/8px
-    //     no-repeat;
-    //   position: absolute;
-    //   width: 12px; 
-    //   height: 12px;
-    //   right: 16px;
-    //   top: 12px;
-    //   bottom: 12px;
-    //   opacity: 1;
-    // }
+
+  .clear_icon {
+    right: 16px;
+    top: 12px;
+    bottom: 12px;
+    opacity: 0;
+    @include icon('close_light', 12px, 8px);
+
+    @if $dark-mode == true {
+      @include icon('close', 12px, 8px);
+    }
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Делаем фон прозрачным */
+    font: 300 14px/140% "Inter", sans-serif;
+    padding-left: 48px;
+    padding-right: 48px;
+    position: absolute;
+    inset: 0;
+    color: var(--input-color);
+    border-radius: 4px;
+    border: 1px solid var(--placeholder-color);
+
+    @if $dark-mode == true {
+      border: null; /* Если темная тема, убираем границу */
+    }
+
+    &::placeholder {
+      color: var(--primary-dark-gray);
+      font-weight: 300;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 1px solid var(--input-color);
+    }
+    
+    &:not(:placeholder-shown) + .clear_icon {
+      opacity: 1;
+    }
+  }
+}

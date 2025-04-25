@@ -1,6 +1,5 @@
 export default {
   translation: {
-    placeholder: 'Painting title', 
-  }
-
+    placeholder: "Painting title",
+  },
 };

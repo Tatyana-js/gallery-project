@@ -1,18 +1,20 @@
-import logo from '../../assets/logo.svg';
+import logo_dark from '../../assets/logo.svg';
+import logo_light from '../../assets/logo_light.svg';
+import dark_icon from '../../assets/icons/dark_icon.svg';
 import icon_sun from '../../assets/icons/sun_icon.svg';
 import styles from './Header.module.scss';
-import { useContext } from 'react';
-import  { ThemeContext } from '../../context/ThemeContext';
+import useTheme from '../../hooks/index';
 
 const Header = () => {
-  const { theme, togleTheme } = useContext(ThemeContext);
-  console.log(theme)
+  const { theme, togleTheme } = useTheme();
 
   return (
     <div className={styles.header}>
-      <img src={logo} className={styles.icon_logo} alt="Логотип" />
+      {theme === 'dark' && <img src={logo_dark} className={styles.icon_logo} alt="Логотип" />}
+      {theme === 'light' && <img src={logo_light} className={styles.icon_logo} alt="Логотип" />}
       <button className={styles.button_theme} onClick={togleTheme}>
-        <img src={icon_sun} className={styles.icon_sun} alt="Знак солнца" />
+        {theme === 'dark' && <img src={icon_sun} className={styles.icon_sun} alt="Знак солнца" />}
+        {theme === 'light' && <img src={dark_icon} className={styles.icon_sun} alt="Знак луны" />}
       </button>
     </div>
   );

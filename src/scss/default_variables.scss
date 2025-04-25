@@ -1,40 +1,19 @@
-// @use "sass:map";
-// @use "sass:string";
-
-// $theme-colors: (
-//   "primary":    ("primary_white": "#FFFFFF", "primary_black": "#121212"),
-//   "secondary":  ("secondary_white": "#FCFCFC", "secondary_black": "#1A1818"),
-// );
-
-// @mixin colors($theme-colors, $tone: black) {
-//   @each $color-name, $color-tone in $theme-colors {
-    
-//     $color-value: map.get($color-tone, $tone);
-//     .bg-#{$color-name} {
-//       background: string.unquote($color-value);
-//     }
-//     .text-#{$color-name} {
-//       color: string.unquote($color-value); 
-//     }
-//   }
-// }
-
-// @include colors($theme-colors);
-
 :root {
-  --primary-white: #FFFFFF;
+  --primary-white: #ffffff;
   --primary-black: #121212;
-  --primary-light-gray: #DEDEDE;
+  --primary-light-gray: #dedede;
   --primary-dark-gray: #575757;
 
-  --secondary-white: #FCFCFC;
-  --secondary-black: #1A1818;
-  --secondary-gray: #9C9C9C;
-  --accent-red: #9B4B4B;
-  --accent-gold: #AB8956;
-  --hover-gray: #F3F3F3;
-  --hover-dark: #1B1B1B;
+  --secondary-white: #fcfcfc;
+  --secondary-black: #1a1818;
+  --secondary-gray: #9c9c9c;
+  --accent-red: #9b4b4b;
+  --accent-gold: #ab8956;
+  --hover-gray: #f3f3f3;
+  --hover-dark: #1b1b1b;
+}
 
+.dark {
   --text-color: var(--primary-white);
   --background-color: var(--primary-black);
   --accent-color: var(--accent-gold);
@@ -42,4 +21,14 @@
   --button-background-hover: var(--hover-dark);
   --placeholder-color: var(--primary-dark-gray);
   --input-color: var(--primary-light-gray);
+}
+
+.light {
+  --text-color: var(--primary-black);
+  --background-color: var(--primary-white);
+  --accent-color: var(--accent-red);
+  --button-background: var(--secondary-white);
+  --button-background-hover: var(--hover-gray);
+  --placeholder-color: var(--primary-light-gray);
+  --input-color: var(--primary-dark-gray);
 }

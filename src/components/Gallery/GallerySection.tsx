@@ -1,17 +1,18 @@
-import styles from './Gallery.module.scss';
-import { useGetPaintingsQuery, useGetAuthorsQuery, useGetLocationsQuery } from '../../api/apiGallery';
-import { useEffect } from 'react';
+import styles from "./Gallery.module.scss";
+import {
+  useGetAuthorsQuery,
+  useGetLocationsQuery,
+} from "../../api/apiGallery";
+import { ICard } from "../../api/apiGallery";
 
-const GalleryList = () => {
-  const { data: paintings = [], error:  paintingsError} =  useGetPaintingsQuery();
+interface IGalleryListProps {
+  paintings: ICard[];
+}
+
+const GalleryList = ({ paintings }: IGalleryListProps) => {
+
   const { data: authors = [] } = useGetAuthorsQuery();
-  const  { data: locations = [] } = useGetLocationsQuery();
-
-  useEffect(() => {
-    if (paintingsError) {
-      console.error(paintingsError);
-    }
-  }, [paintingsError]);
+  const { data: locations = [] } = useGetLocationsQuery();
 
   return (
     <div className={styles.galleryList}>
@@ -22,11 +23,15 @@ const GalleryList = () => {
             <div className={styles.line}></div>
             <div className={styles.firstInfo}>
               <p>{item.name}</p>
-              <p className={styles.created}>{item.created}</p> 
+              <p className={styles.created}>{item.created}</p>
             </div>
             <div className={styles.secondInfo}>
-              <p>{authors.find((author) => author.id === item.authorId)?.name}</p>
-              <p className={styles.created}>{locations.find((location) => location.id === item.id)?.location}</p>
+              <p>
+                {authors.find((author) => author.id === item.authorId)?.name}
+              </p>
+              <p className={styles.created}>
+                {locations.find((location) => location.id === item.id)?.location}
+              </p>
             </div>
           </div>
         </div>
