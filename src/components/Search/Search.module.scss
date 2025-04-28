@@ -56,9 +56,9 @@ $dark-mode: true;
     border-radius: 4px;
     border: 1px solid var(--placeholder-color);
 
-    @if $dark-mode == true {
-      border: none; /* Если темная тема, убираем границу */
-    }
+    // @if $dark-mode == true {
+    //   border: none; /* Если темная тема, убираем границу, ВОТ ЗДЕСЬ НЕ РАБОТАЕТ ЕСЛИ РАСКОМЕНТИРОВАТЬ.*/
+    // }
 
     &::placeholder {
       color: var(--primary-dark-gray);
