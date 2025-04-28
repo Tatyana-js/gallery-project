@@ -23,7 +23,7 @@ $dark-mode: true;
   position: relative;
 
   &::before {
-    content: ""; 
+    content: "";
     @include icon('search_light', 20px, 20px);
 
     @if $dark-mode == true {

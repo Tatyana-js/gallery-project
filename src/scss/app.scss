@@ -10,6 +10,7 @@
   width: 100vw;
   min-height: 100vh;
   background: var(--background-color);
+  padding-bottom: 40px;
 }
 
 .container {
@@ -20,6 +21,12 @@
 @media screen  and (max-width: 1280px) {
   .container {
     padding: 0 20px;
-    width: 100%;  
+    width: 100%;
+  }
+}
+
+@media screen  and (max-width: 768px) {
+  .body {
+    padding-bottom: 20px;
   }
 }

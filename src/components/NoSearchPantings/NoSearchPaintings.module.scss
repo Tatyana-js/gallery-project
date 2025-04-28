@@ -1,0 +1,18 @@
+@mixin styleText {
+    font: 300 16px/140% "Inter", sans-serif;
+}
+
+.noResultPaintings {
+  @include styleText;
+  color: var(--input-color);
+  margin-top: 60px;
+
+  .lorem {
+    font-weight: 500;
+  }
+}
+.secondText {
+  @include styleText;
+  color: var(--secondary-gray);
+  margin-top: 12px;
+}

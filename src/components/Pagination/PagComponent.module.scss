@@ -2,15 +2,14 @@
   width: $size;
   height: $size;
   padding: 1px 8px;  
-  color: var(--primary-light-gray);
-  align-items: baseline;
+  color: var(--input-color);
 }
 
 .container {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 .pagination {
@@ -23,19 +22,34 @@
 .page_item {
   @include item(24px);
   
+  
   font-family: "Inter";
   font-size: 16px;
   font-weight: 300;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .page_previous {
   @include item(20px);
   margin-right: 20px;
+
+  &:hover {
+    background: var(--button-background);
+    border-radius: 4px;
+  }
 }
 
 .page_next {
-    @include item(20px);
-    margin-left: 20px;
+  @include item(20px);
+  margin-left: 20px;
+
+  &:hover {
+    background: var(--button-background);
+    border-radius: 4px;
+  }
 }
 
 .active {
