@@ -1,41 +1,35 @@
-import styles from "./PagComponent.module.scss";
-import icon_arrow from "../../assets/icons/arrow_icon.svg";
-import { ICard } from "../../api/apiGallery";
+import styles from './PagComponent.module.scss';
+import ReactPaginate from 'react-paginate';
 
 interface IPageProps {
-  pageNumber: number;
-  setPageNumber: (pageNumber: number) => void;
-  pagePaintings: ICard[];
+  currentPageNumber: number;
+  setCurrentPageNumber: (currentPageNumber: number) => void;
+  totalPages: number;
 }
 
-const PagComponent = ({ pageNumber, setPageNumber, pagePaintings }: IPageProps) => {
-  console.log(pagePaintings);
+const PagComponent = ({ currentPageNumber, setCurrentPageNumber, totalPages }: IPageProps) => {
 
-  const handleClick = (pageNumber: number): void => {
-    if (pageNumber) {
-      setPageNumber(pageNumber); 
-    }
+  const handleClick = (event: { selected: number }) => {
+    setCurrentPageNumber(event.selected + 1);
   };
 
   return (
-    <div className={styles.pagination}>
-      <img
-        src={icon_arrow}
-        className={styles.icon_arrow_next}
-        alt="Следующая страница"
-        onClick={() => handleClick(pageNumber + 1)}
-      />
-      <section className={styles.pages}>
-        <span className={styles.page} onClick={() => handleClick(pageNumber)}>{pageNumber}</span>
-        <span className={styles.page} onClick={() => handleClick(pageNumber)}>{pageNumber}</span>
-        <span className={styles.page} onClick={() => handleClick(pageNumber)}>{pageNumber}</span>
-        <span className={styles.page} onClick={() => handleClick(9)}>{pageNumber}</span>
-      </section>
-      <img
-        src={icon_arrow}
-        className={styles.icon_arrow}
-        alt="Предыдущая страница"
-        onClick={() => handleClick(pageNumber - 1)}
+    <div className={styles.container}>
+      <ReactPaginate
+        previousLabel='<'
+        nextLabel=">"
+        pageClassName={styles.page_item}
+        previousClassName={styles.page_previous}
+        nextClassName={styles.page_next}
+        breakLabel={'...'}
+        breakClassName={styles.page_item}
+        pageCount={totalPages}
+        marginPagesDisplayed={1}
+        pageRangeDisplayed={2}
+        onPageChange={handleClick}
+        containerClassName={styles.pagination}
+        activeClassName={styles.active}
+        initialPage={currentPageNumber}
       />
     </div>
   );

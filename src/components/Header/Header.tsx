@@ -12,7 +12,7 @@ const Header = () => {
     <div className={styles.header}>
       {theme === 'dark' && <img src={logo_dark} className={styles.icon_logo} alt="Логотип" />}
       {theme === 'light' && <img src={logo_light} className={styles.icon_logo} alt="Логотип" />}
-      <button className={styles.button_theme} onClick={togleTheme}>
+      <button type="button" className={styles.button_theme} onClick={togleTheme}>
         {theme === 'dark' && <img src={icon_sun} className={styles.icon_sun} alt="Знак солнца" />}
         {theme === 'light' && <img src={dark_icon} className={styles.icon_sun} alt="Знак луны" />}
       </button>

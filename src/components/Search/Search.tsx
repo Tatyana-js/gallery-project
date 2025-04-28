@@ -25,16 +25,19 @@ const SearchForm = ({ onChange, value }: ISearchFormProps) => {
 
 
   return (
-    <form className={styles.searchLine} onSubmit={handleSubmit}>
-      <input
-        placeholder={t("placeholder")}
-        type="text"
-        ref={searchRef}
-        value={value}
-        onChange={handleChange}
-      />
-      <span className={styles.clear_icon} onClick={handleClear}></span>
-    </form>
+    <div className={styles.container}>
+      <form className={styles.searchLine} onSubmit={handleSubmit}>
+        <input
+          placeholder={t("placeholder")}
+          type="text"
+          ref={searchRef}
+          value={value}
+          onChange={handleChange}
+        />
+        <span className={styles.clear_icon} onClick={handleClear}></span>
+      </form>
+    </div>
+
   );
 };
 

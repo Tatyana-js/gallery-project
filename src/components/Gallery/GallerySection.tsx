@@ -26,12 +26,8 @@ const GalleryList = ({ paintings }: IGalleryListProps) => {
               <p className={styles.created}>{item.created}</p>
             </div>
             <div className={styles.secondInfo}>
-              <p>
-                {authors.find((author) => author.id === item.authorId)?.name}
-              </p>
-              <p className={styles.created}>
-                {locations.find((location) => location.id === item.id)?.location}
-              </p>
+              <p>{authors.find((author) => author.id === item.authorId)?.name}</p>
+              <p className={styles.created}>{locations.find((location) => location.id === item.id)?.location}</p>
             </div>
           </div>
         </div>

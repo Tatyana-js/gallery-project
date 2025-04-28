@@ -8,28 +8,31 @@ import PagComponent from "./components/Pagination/PagComponent.tsx";
 import useTheme from "./hooks/index.tsx";
 import { useGetPaintingsQuery } from './api/apiGallery.ts';
 
-function App() {
+const App = () => {
   const { theme } = useTheme();
   const [value, setValue] = useState<string>("");
-  const { data: paintings = [] } = useGetPaintingsQuery({ q: value });
+  const [currentPageNumber, setCurrentPageNumber] = useState<number>(0);
+  const _limit = 6;
 
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  const { data: countPaintings = [] } = useGetPaintingsQuery({_limit: 1000});
+  const { data: paintings = [] } = useGetPaintingsQuery({ q: value, _page: currentPageNumber, _limit });
 
-  
-  const { data: pagePaintings = [] } = useGetPaintingsQuery({ _page: pageNumber, _limit: 6 });
-  const totalPages = Math.ceil(paintings.length / _limit)
-  
+  const totalPages = Math.ceil(countPaintings.length / _limit);
+
   return (
     <div className={"body " + theme}>
       <div className="container">
         <Header />
         <SearchForm onChange={setValue} value={value} />
         <GalleryList paintings={paintings} />
-        <PagComponent pageNumber={pageNumber}  setPageNumber={setPageNumber} pagePaintings={pagePaintings} />
+        <PagComponent 
+          currentPageNumber={currentPageNumber}
+          setCurrentPageNumber={setCurrentPageNumber} 
+          totalPages={totalPages}
+        />
       </div>
     </div>
-
   );
-}
+};
 
 export default App;

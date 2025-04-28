@@ -1,43 +1,47 @@
-@mixin icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  fill: white;
+@mixin item ($size){
+  width: $size;
+  height: $size;
+  padding: 1px 8px;  
+  color: var(--primary-light-gray);
+  align-items: baseline;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 100px;
 }
 
 .pagination {
-  width: 228px;
-  height: 24px;
-  margin: 0 auto;
-  margin-top: 40px;
-  padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
-
-  .icon_arrow_next {
-    @include icon;
-    transform: rotate(0.5turn);
-  }
-  
-  .icon_arrow {
-    @include icon;
-  }
-
-  .pages {
-    display: flex;
-    width: 149px;
-    height: 24px;
-    gap: 4px;
-    .page {
-      width: 24px;
-      height: 24px;
-      padding: 1px 8px;
-      border-radius: 4px;
-      background: var(--secondary-black);
-      font-family: "Inter";
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--primary-light-gray);
-    }
-  }
+  list-style: none;
+  gap: 4px;
 }
+
+.page_item {
+  @include item(24px);
+  
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.page_previous {
+  @include item(20px);
+  margin-right: 20px;
+}
+
+.page_next {
+    @include item(20px);
+    margin-left: 20px;
+}
+
+.active {
+  background: var(--button-background);
+  border-radius: 4px;
+  font-weight: 500;
+}
+  
+
