@@ -6,6 +6,7 @@ $dark-mode: true;
   height: $size;
   background: url("../../assets/icons/icon_#{$name}.svg") center/$bs no-repeat;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -14,21 +15,24 @@ $dark-mode: true;
 
 .searchLine {
   grid-column: 3/4;
+  width: 336px;
+  max-width: 100%; 
   height: 36px;
-  width: 100%;
-  background: var(--background-color);
+
+  background: var(--button-background);
   margin-top: 44px;
   margin-left: auto;
   padding: 8px 16px;
   position: relative;
+  border-radius: 4px;
 
   &::before {
     content: "";
-    @include icon("search_light", 20px, 20px);
+    @include icon("searсh_light", 20px, 20px);
 
-    @if $dark-mode == true {
-      @include icon("search", 20px, 20px);
-    }
+    // @if $dark-mode == true {
+    //   @include icon("search", 20px, 20px);
+    // }
   }
 
   .clear_icon {
@@ -38,15 +42,15 @@ $dark-mode: true;
     opacity: 0;
     @include icon("close_light", 12px, 8px);
 
-    @if $dark-mode == true {
-      @include icon("close", 12px, 8px);
-    }
+    // @if $dark-mode == true {
+    //   @include icon("close", 12px, 8px);
+    // }
   }
 
   input {
     width: 100%;
     height: 100%;
-    background: transparent; /* Делаем фон прозрачным */
+    background: transparent;
     font:
       300 14px/140% "Inter",
       sans-serif;
@@ -55,13 +59,12 @@ $dark-mode: true;
     position: absolute;
     inset: 0;
     color: var(--input-color);
-    border-radius: 4px;
-    border: 1px solid var(--placeholder-color);
+    border: (1px, solid, var(--placeholder-color));
 
     // @if $dark-mode == true {
-    //   border: none; /* Если темная тема, убираем границу, ВОТ ЗДЕСЬ НЕ РАБОТАЕТ ЕСЛИ РАСКОМЕНТИРОВАТЬ.*/
+    //   border: (0, none, var(--placeholder-color));
     // }
-
+     
     &::placeholder {
       color: var(--primary-dark-gray);
       font-weight: 300;
@@ -94,5 +97,6 @@ $dark-mode: true;
   }
   .searchLine {
     grid-column: 1/2;
+    width: 100%;
   }
 }
