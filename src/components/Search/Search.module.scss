@@ -1,10 +1,8 @@
-$dark-mode: true;
-
 @mixin icon($name, $size, $bs) {
   position: absolute;
   width: $size;
   height: $size;
-  background: url("../../assets/icons/icon_#{$name}.svg") center/$bs no-repeat;
+  background: $name center/$bs no-repeat;
 }
 
 .container {
@@ -28,11 +26,7 @@ $dark-mode: true;
 
   &::before {
     content: "";
-    @include icon("searсh_light", 20px, 20px);
-
-    // @if $dark-mode == true {
-    //   @include icon("search", 20px, 20px);
-    // }
+    @include icon(var(--imgUrl), 20px, 20px);
   }
 
   .clear_icon {
@@ -40,11 +34,7 @@ $dark-mode: true;
     top: 12px;
     bottom: 12px;
     opacity: 0;
-    @include icon("close_light", 12px, 8px);
-
-    // @if $dark-mode == true {
-    //   @include icon("close", 12px, 8px);
-    // }
+    @include icon(var(--icon_close), 12px, 8px);
   }
 
   input {
@@ -59,12 +49,8 @@ $dark-mode: true;
     position: absolute;
     inset: 0;
     color: var(--input-color);
-    border: (1px, solid, var(--placeholder-color));
+    border: var(--border_search);
 
-    // @if $dark-mode == true {
-    //   border: (0, none, var(--placeholder-color));
-    // }
-     
     &::placeholder {
       color: var(--primary-dark-gray);
       font-weight: 300;

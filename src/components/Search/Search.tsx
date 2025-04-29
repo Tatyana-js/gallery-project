@@ -8,6 +8,7 @@ interface ISearchFormProps {
 }
 
 const SearchForm = ({ onChange, value }: ISearchFormProps) => {
+
   const { t } = useTranslation();
   const searchRef = useRef(null);
 
