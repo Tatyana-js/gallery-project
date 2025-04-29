@@ -1,8 +1,5 @@
 import styles from "./Gallery.module.scss";
-import {
-  useGetAuthorsQuery,
-  useGetLocationsQuery,
-} from "../../api/apiGallery";
+import { useGetAuthorsQuery, useGetLocationsQuery } from "../../api/apiGallery";
 import { ICard } from "../../api/apiGallery";
 
 interface IGalleryListProps {
@@ -10,7 +7,6 @@ interface IGalleryListProps {
 }
 
 const GalleryList = ({ paintings }: IGalleryListProps) => {
-
   const { data: authors = [] } = useGetAuthorsQuery();
   const { data: locations = [] } = useGetLocationsQuery();
 
@@ -26,8 +22,15 @@ const GalleryList = ({ paintings }: IGalleryListProps) => {
               <p className={styles.created}>{item.created}</p>
             </div>
             <div className={styles.secondInfo}>
-              <p>{authors.find((author) => author.id === item.authorId)?.name}</p>
-              <p className={styles.created}>{locations.find((location) => location.id === item.id)?.location}</p>
+              <p>
+                {authors.find((author) => author.id === item.authorId)?.name}
+              </p>
+              <p className={styles.created}>
+                {
+                  locations.find((location) => location.id === item.id)
+                    ?.location
+                }
+              </p>
             </div>
           </div>
         </div>

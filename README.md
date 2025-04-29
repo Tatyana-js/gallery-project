@@ -2,20 +2,22 @@
 
 Проект представляет собой сайт художественной галереи. Картины загружаются с сервера постранично, также работает поиск картин по названию.
 
-***
-### Установка 
-1. #### _клонируем репозиторий_
-  
-   git clone  https://github.com/Tatyana-js/gallery-project.git
+---
 
-2. #### _переходим в папку_ ***gallery-project***
-   
+### Установка
+
+1. #### _клонируем репозиторий_
+
+   git clone https://github.com/Tatyana-js/gallery-project.git
+
+2. #### _переходим в папку_ **_gallery-project_**
+
    cd gallery-project
 
 3. #### _утанавливаем зависимости_
-   
+
    npm install
 
 4. #### _запуск_
-   
-  npm run dev
+
+   npm run dev

@@ -10,12 +10,11 @@ const NoSearchPaintings = ({ value }: INoSearchProps) => {
   return (
     <>
       <p className={styles.noResultPaintings}>
-        {t('noSearchPaintings')}
+        {t("noSearchPaintings")}
         <span className={styles.lorem}>{t(value, `${value}`)}</span>
       </p>
-      <p className={styles.secondText}>{t('secondText')}</p>
+      <p className={styles.secondText}>{t("secondText")}</p>
     </>
-
   );
 };
 

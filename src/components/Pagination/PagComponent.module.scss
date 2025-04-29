@@ -1,7 +1,7 @@
-@mixin item ($size){
+@mixin item($size) {
   width: $size;
   height: $size;
-  padding: 1px 8px;  
+  padding: 1px 8px;
   color: var(--input-color);
 }
 
@@ -21,8 +21,7 @@
 
 .page_item {
   @include item(24px);
-  
-  
+
   font-family: "Inter";
   font-size: 16px;
   font-weight: 300;
@@ -57,5 +56,3 @@
   border-radius: 4px;
   font-weight: 500;
 }
-  
-

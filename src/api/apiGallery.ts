@@ -22,7 +22,7 @@ interface ILocation {
 export interface PaintingsQueryParams {
   id?: number;
   q?: string;
-  _page?: number; 
+  _page?: number;
   authorId?: number;
   _limit?: number;
 }

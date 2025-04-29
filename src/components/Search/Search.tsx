@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ChangeEvent, FormEvent, useRef } from "react";
 
 interface ISearchFormProps {
-  onChange: (input: string) => void,
+  onChange: (input: string) => void;
   value: string;
 }
 
@@ -24,7 +24,6 @@ const SearchForm = ({ onChange, value }: ISearchFormProps) => {
   const handleClear = () => {
     onChange("");
   };
-
 
   return (
     <div className={styles.container}>
