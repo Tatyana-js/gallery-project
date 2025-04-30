@@ -7,7 +7,6 @@
 }
 
 .icon_logo {
-  width: 91px;
   height: 20px;
 }
 
@@ -21,5 +20,11 @@
   .icon_sun {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .icon_logo {
+    height: 16px;
   }
 }
