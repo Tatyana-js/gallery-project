@@ -8,7 +8,6 @@ interface ISearchFormProps {
 }
 
 const SearchForm = ({ onChange, value }: ISearchFormProps) => {
-
   const { t } = useTranslation();
   const searchRef = useRef(null);
 
@@ -17,7 +16,7 @@ const SearchForm = ({ onChange, value }: ISearchFormProps) => {
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    if (event.target.value.length > 0) {
+    if (event.target.value.length >= 0) {
       onChange(event.target.value);
     }
   };

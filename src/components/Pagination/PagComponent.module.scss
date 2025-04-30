@@ -3,6 +3,9 @@
   height: $size;
   padding: 1px 8px;
   color: var(--input-color);
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .container {
@@ -29,8 +32,8 @@
   &::after {
     content: "";
     position: absolute;
-    left: 0; 
-    right: 0; 
+    left: 0;
+    right: 0;
     bottom: -1px;
     height: 1px;
     background: var(--input-color);
@@ -39,7 +42,7 @@
   }
 
   &:hover::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
   }
 }
 
