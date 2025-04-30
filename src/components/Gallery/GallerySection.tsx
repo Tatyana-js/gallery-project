@@ -1,6 +1,6 @@
 import styles from "./Gallery.module.scss";
 import { useGetAuthorsQuery, useGetLocationsQuery } from "../../api/apiGallery";
-import { ICard } from "../../types";
+import { ICard } from "../../types/index.ts";
 
 interface IGalleryListProps {
   paintings: ICard[];

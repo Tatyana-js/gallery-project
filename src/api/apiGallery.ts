@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IAuthor, ICard, ILocation } from "../types";
+import { IAuthor, ICard, ILocation } from "../types/index.ts";
 
 export interface PaintingsQueryParams {
   id?: number;
