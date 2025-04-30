@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./NoSearchPaintings.module.scss";
 import { useTranslation } from "react-i18next";
 

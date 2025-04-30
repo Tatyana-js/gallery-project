@@ -1,3 +1,4 @@
+import React from "react";
 import logo_dark from "../../assets/logo.svg";
 import logo_light from "../../assets/logo_light.svg";
 import dark_icon from "../../assets/icons/dark_icon.svg";

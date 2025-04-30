@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Search.module.scss";
 import { useTranslation } from "react-i18next";
 import { ChangeEvent, FormEvent, useRef } from "react";

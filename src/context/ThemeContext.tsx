@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, ReactNode, useState, useMemo } from "react";
 
 export interface IThemeContext {

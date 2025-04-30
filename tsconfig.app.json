@@ -1,26 +1,46 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES6",
+//     "lib": [
+//       "DOM",
+//       "ES2017",
+//       "DOM.Iterable",
+//       "ScriptHost",
+//     ],
+//     "strict": true,
+//     "module": "ES6",
+//     "moduleResolution": "node",
+//     "outDir": "./dist",
+//     "esModuleInterop": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "allowImportingTsExtensions": true,
+//     "emitDeclarationOnly": true,
+//     "declaration": true,
+//   },
+//   "include": [
+//     "./src"
+//   ],
+//   "exclude": [
+//     "node_modules",
+//     "dist",
+//   ],
+// }
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
   "include": ["src"]
 }

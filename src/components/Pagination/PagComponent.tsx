@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./PagComponent.module.scss";
 
 interface IPageProps {

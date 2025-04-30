@@ -1,6 +1,7 @@
+import React from "react";
 import styles from "./Gallery.module.scss";
 import { useGetAuthorsQuery, useGetLocationsQuery } from "../../api/apiGallery";
-import { ICard } from "../../types/index.ts";
+import { ICard } from "../../types/index";
 
 interface IGalleryListProps {
   paintings: ICard[];

@@ -1,13 +1,14 @@
+import React from "react";
 import "./scss/app.scss";
 import "./scss/default_variables.scss";
 import { useState } from "react";
-import useTheme from "./hooks/index.tsx";
-import { useGetPaintingsQuery } from "./api/apiGallery.ts";
-import Header from "./components/Header/Header.tsx";
-import SearchForm from "./components/Search/Search.tsx";
-import GalleryList from "./components/Gallery/GallerySection.tsx";
-import PagComponent from "./components/Pagination/PagComponent.tsx";
-import NoSearchPaintings from "./components/NoSearchPantings/NoSearchPaintings.tsx";
+import useTheme from "./hooks/index";
+import { useGetPaintingsQuery } from "./api/apiGallery";
+import Header from "./components/Header/Header";
+import SearchForm from "./components/Search/Search";
+import GalleryList from "./components/Gallery/GallerySection";
+import PagComponent from "./components/Pagination/PagComponent";
+import NoSearchPaintings from "./components/NoSearchPantings/NoSearchPaintings";
 
 interface IState {
   value: string;

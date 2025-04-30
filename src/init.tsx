@@ -1,12 +1,13 @@
+import React from "react";
 import { StrictMode } from "react";
 import i18next from "i18next";
 import { initReactI18next, I18nextProvider } from "react-i18next";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import en from "./locales/en.ts";
-import App from "./App.tsx";
-import ThemeContextProvider from "./context/ThemeContext.tsx";
-import { apiGallery } from "./api/apiGallery.ts";
+import en from "./locales/en";
+import App from "./App";
+import ThemeContextProvider from "./context/ThemeContext";
+import { apiGallery } from "./api/apiGallery";
 
 const resources = { en } as const;
 
