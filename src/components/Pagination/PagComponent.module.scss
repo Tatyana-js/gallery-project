@@ -21,13 +21,25 @@
 
 .page_item {
   @include item(24px);
-
   font-family: "Inter";
   font-size: 16px;
   font-weight: 300;
+  position: relative;
 
-  &:hover {
-    text-decoration: underline;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: -1px;
+    height: 1px;
+    background: var(--input-color);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1); 
   }
 }
 
