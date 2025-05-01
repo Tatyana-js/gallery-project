@@ -25,7 +25,6 @@ const init = async (): Promise<React.ReactNode> => {
   const store = configureStore({
     reducer: {
       [apiGallery.reducerPath]: apiGallery.reducer,
-      // pagesNumber:
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(apiGallery.middleware),
