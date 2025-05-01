@@ -1,8 +1,8 @@
 import React from "react";
-import logo_dark from "../../../public/assets/logo.svg";
-import logo_light from "../../../public/assets/logo_light.svg";
-import dark_icon from "../../../public/assets/dark_icon.svg";
-import icon_sun from "../../../public/assets/sun_icon.svg";
+import logo_dark from "../../assets/logo.svg";
+import logo_light from "../../assets/logo_light.svg";
+import dark_icon from "../../assets/dark_icon.svg";
+import icon_sun from "../../assets/sun_icon.svg";
 import styles from "./Header.module.scss";
 import useTheme from "../../hooks/index";
 
