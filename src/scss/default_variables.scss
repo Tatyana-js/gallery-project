@@ -21,8 +21,8 @@
   --button-background-hover: var(--hover-dark);
   --placeholder-color: var(--primary-dark-gray);
   --input-color: var(--primary-light-gray);
-  --imgUrl: url("src/assets/icon_search.svg");
-  --icon_close: url("src/assets/icon_close.svg");
+  --imgUrl: url("../../public/assets/icon_search.svg");
+  --icon_close: url("../../public/assets/icon_close.svg");
   --border_search: none;
 }
 
@@ -34,7 +34,7 @@
   --button-background-hover: var(--hover-gray);
   --placeholder-color: var(--primary-light-gray);
   --input-color: var(--primary-dark-gray);
-  --imgUrl: url("src/assets/icon_searсh_light.svg");
-  --icon_close: url("src/assets/icon_close_light.svg");
+  --imgUrl: url("../../public/assets/icon_searсh_light.svg");
+  --icon_close: url("../../public/assets/icon_close_light.svg");
   --border_search: 1px, solid, var(--placeholder-color);
 }
