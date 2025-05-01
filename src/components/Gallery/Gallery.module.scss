@@ -92,11 +92,14 @@
 
 @media screen and (max-width: 768px) {
   .painting {
+    .secondInfo {
+      bottom: 8px;
+    }
     .container {
       padding: 8px 12px;
       width: 236px;
+      font-size: 12px;
     }
-    font-size: 12px;
   }
 
   .created {
